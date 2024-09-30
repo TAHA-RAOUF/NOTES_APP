@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+use Illuminate\Support\Facades\Log;
+
+Route::get('/', function () {
+    Log::info('Homepage accessed');
+    return view('welcome');
+});
 
 Route::get('directeur', function () {
     return view('directeur.pageHome');
